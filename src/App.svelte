@@ -14,11 +14,13 @@
     </svg>
   </div>
   <Card />
+  <Copyright />
 </main>
 
 
 <script lang="ts">
 import Card from "./components/Card.svelte";
+import Copyright from "./components/Copyright.svelte";
 import gsap from "gsap";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { onMount } from "svelte";
