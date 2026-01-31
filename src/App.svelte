@@ -1,4 +1,4 @@
-<div>
+<main>
   <div class="welcome_container">
     <div class="welcome" id="welcome"></div>
   </div>
@@ -13,10 +13,12 @@
       <path bind:this={path} class="path" stroke="url(#grad)" fill="url(#grad)" stroke-width="2px" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
     </svg>
   </div>
-</div>
+  <Card />
+</main>
 
 
 <script lang="ts">
+import Card from "./components/Card.svelte";
 import gsap from "gsap";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { onMount } from "svelte";
@@ -32,7 +34,7 @@ let tl: GSAPTimeline;
 
 onMount(() => {
   new Typed("#welcome", {
-    strings: ["Welcome to my website!"],
+    strings: ["Welcome!"],
     typeSpeed: 60,
     loop: false
   })
@@ -44,7 +46,7 @@ onMount(() => {
 
   setTimeout(() => {
     tl.play();
-  }, 2000);
+  }, 600);
 });
 </script>
 
