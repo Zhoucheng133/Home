@@ -1,54 +1,13 @@
 <main class="back">
-  <div class="float_button">
-    <div class="label" 
-      onclick={ flipHandler } 
-      role="button" 
-      tabindex="0" 
-      onkeydown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          flipHandler();
-        }
-      }}
-    >Quick link</div>
-    <i class="fa-solid fa-arrow-left"></i>
-  </div>
+  <FloatButton flipHandler={flipHandler} label="Quick Link" icon="fa-solid fa-arrow-left" />
 </main>
 
 <script lang="ts">
+import FloatButton from "./FloatButton.svelte";
 let { flipHandler } = $props();
 </script>
 
 <style>
-.float_button{
-  right: 20px;
-  position: absolute;
-  bottom: 25px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.label:hover::after{
-  transform: scaleX(1);
-}
-.label::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  transform: scaleX(0); 
-  transform-origin: center;
-  transition: transform 0.2s ease-in-out; 
-}
-.label{
-  text-decoration: none;
-  position: relative;
-  cursor: pointer;
-  color: black;
-}
 .back{
   position: absolute;
   width: 100%;

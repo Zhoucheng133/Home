@@ -2,69 +2,49 @@
   <div class="title">👋 Hi, visitor!</div>
 
   <div class="list">
-    <div class="item">
-      <i class="fa-brands fa-github"></i>
-      <div class="label_container">
-        <a class="label" href="https://github.com/Zhoucheng133" target="_blank">GitHub</a>
-      </div>
-    </div>
-    <div class="item">
-      <i class="fa-brands fa-bilibili"></i>
-      <div class="label_container">
-        <a class="label" href="https://space.bilibili.com/5129395" target="_blank">bilibili</a>
-      </div>
-    </div>
-    <div class="item">
-      <i class="fa-solid fa-gamepad"></i>
-      <div class="label_container">
-        <a class="label" href="https://osu.ppy.sh/users/11444852" target="_blank">osu!</a>
-      </div>
-    </div>
-    <div class="item">
-      <i class="fa-solid fa-blog"></i>
-      <div class="label_container">
-        <a class="label" href="https://blog.z-server.top/" target="_blank">Blog</a>
-      </div>
-    </div>
-    <div class="item">
-      <i class="fa-solid fa-code"></i>
-      <div class="label_container">
-        <a class="label" href="https://blog.z-server.top/myprj/myprj" target="_blank">Developed Projects</a>
-      </div>
-    </div>
-    <div class="item">
-      <i class="fa-brands fa-docker"></i>
-      <div class="label_container">
-        <a class="label" href="https://hub.docker.com/repositories/zhouc1230" target="_blank">Docker Hub</a>
-      </div>
-    </div>
-    <div class="item">
-      <i class="fa-brands fa-microsoft"></i>
-      <div class="label_container">
-        <a class="label" href="https://apps.microsoft.com/search/publisher?name=ZhouCheng" target="_blank">Microsoft Store</a>
-      </div>
-    </div>
+    <LinkButton 
+      link="https://github.com/Zhoucheng133" 
+      icon="fa-brands fa-github" 
+      label="GitHub"
+    />
+    <LinkButton 
+      link="https://space.bilibili.com/5129395" 
+      icon="fa-brands fa-bilibili" 
+      label="bilibili"
+    />
+    <LinkButton 
+      link="https://osu.ppy.sh/users/11444852" 
+      icon="fa-solid fa-gamepad" 
+      label="osu!"
+    />
+    <LinkButton 
+      link="https://blog.z-server.top" 
+      icon="fa-solid fa-blog" 
+      label="Blog"
+    />
+    <LinkButton 
+      link="https://blog.z-server.top/myprj/myprj" 
+      icon="fa-solid fa-code" 
+      label="Developed Projects"
+    />
+    <LinkButton 
+      link="https://hub.docker.com/repositories/zhouc1230" 
+      icon="fa-brands fa-docker" 
+      label="Docker Hub"
+    />
+    <LinkButton 
+      link="https://apps.microsoft.com/search/publisher?name=ZhouCheng" 
+      icon="fa-brands fa-microsoft" 
+      label="Microsoft Store"
+    />
   </div>
 
-  <div class="float_button">
-    <div class="label" 
-      onclick={ flipHandler } 
-      role="button" 
-      tabindex="0" 
-      onkeydown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          flipHandler();
-        }
-      }}
-    >
-      About me
-    </div>
-    <i class="fa-solid fa-arrow-right"></i>
-  </div>
+  <FloatButton flipHandler={flipHandler} label="About me" icon="fa-solid fa-arrow-right" />
 </main>
 
 <script lang="ts">
+import LinkButton from "./LinkButton.svelte";
+import FloatButton from "./FloatButton.svelte";
 let { flipHandler } = $props();
 </script>
 
@@ -80,42 +60,6 @@ let { flipHandler } = $props();
   border-radius: 10px;
   padding: 25px;
   box-sizing: border-box;
-}
-.float_button{
-  right: 20px;
-  position: absolute;
-  bottom: 25px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.label:hover::after{
-  transform: scaleX(1);
-}
-.label::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  transform: scaleX(0); 
-  transform-origin: center;
-  transition: transform 0.2s ease-in-out; 
-}
-.label{
-  text-decoration: none;
-  position: relative;
-  cursor: pointer;
-  color: black;
-}
-.item{
-  display: grid;
-  width: auto;
-  grid-template-columns: 35px auto;
-  align-items: center;
-  margin-top: 10px;
 }
 .list{
   margin-top: 30px;
