@@ -1,4 +1,18 @@
 <main class="back">
+  <div class="title">😉 About me</div>
+  <div class="content">
+    <p>Hi my friend!</p>
+    <p>I'm a software engineer</p>
+    <p>Specializing in FE & mobile development</p>
+    <div>I love</div>
+    <ul class="hobbies">
+      <li>👨🏻‍💻 coding</li>
+      <li>🍿 anime</li>
+      <li>✈️ travel</li>
+      <li>🎮 rhythm games</li>
+      <li>📷 photograph</li>
+    </ul>
+  </div>
   <FloatButton flipHandler={flipHandler} label="Quick Link" icon="fa-solid fa-arrow-left" />
 </main>
 
@@ -8,6 +22,17 @@ let { flipHandler } = $props();
 </script>
 
 <style>
+.hobbies{
+  margin: 0;
+  padding-left: 20px;
+}
+.content{
+  margin-top: 20px;
+  font-size: 14px;
+}
+.title{
+  font-size: 20px;
+}
 .back{
   position: absolute;
   width: 100%;
