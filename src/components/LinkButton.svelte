@@ -1,19 +1,29 @@
 <main>
-  <div class="item">
+  <div 
+    class="item" onclick={click}
+    role="button" 
+      tabindex="0" 
+      onkeydown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          click();
+        }
+      }}
+  >
     <i class={icon}></i>
-    <a class="label" href={link} target="_blank">{label}</a>
+    <div class="label">{label}</div>
   </div>
 </main>
 
 <script>
 let { link, icon, label } = $props();
+
+function click(){
+  window.open(link, '_blank');
+}
 </script>
 
 <style>
-a{
-  text-decoration: none;
-  color: black;
-}
 .item{
   width: auto;
   display: flex;
