@@ -3,7 +3,7 @@
   <div class="content">
     <p>Hi my friend!</p>
     <p>I'm a software engineer</p>
-    <p>Specializing in FE & mobile development</p>
+    <p>Specializing in FE & client-side development</p>
     <div>I love</div>
     <ul class="hobbies">
       <li>👨🏻‍💻 coding</li>
