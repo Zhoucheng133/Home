@@ -1,18 +1,17 @@
 <main class="container">
-  <div class="float_button">
-    <div class="label" 
-      onclick={ flipHandler } 
-      role="button" 
-      tabindex="0" 
-      onkeydown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          flipHandler();
-        }
-      }}
+  <div 
+    class="float_button"
+    onclick={ flipHandler } 
+    role="button" 
+    tabindex="0" 
+    onkeydown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        flipHandler();
+      }
+    }}
     >
-      { label }
-    </div>
+    <div class="label" >{ label }</div>
     <!-- <i class="fa-solid fa-arrow-right"></i> -->
     <i class={icon}></i>
   </div>
