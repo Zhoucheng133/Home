@@ -18,12 +18,12 @@
       label="osu!"
     />
     <LinkButton 
-      link="https://zhoucheng133.github.io" 
+      link="https://blog.z-server.top" 
       icon="fa-solid fa-blog" 
       label="Blog"
     />
     <LinkButton 
-      link="https://zhoucheng133.github.io/myprj/myprj" 
+      link="https:/blog.z-server.top/myprj" 
       icon="fa-solid fa-code" 
       label="Developed Projects"
     />
