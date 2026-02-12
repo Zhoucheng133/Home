@@ -23,7 +23,7 @@
       label="Blog"
     />
     <LinkButton 
-      link="https:/blog.z-server.top/myprj" 
+      link="https://blog.z-server.top/myprj" 
       icon="fa-solid fa-code" 
       label="Developed Projects"
     />
