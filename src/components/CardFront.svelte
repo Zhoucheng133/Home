@@ -37,6 +37,11 @@
       icon="fa-brands fa-microsoft" 
       label="Microsoft Store"
     />
+    <LinkButton 
+      link="https://blog.z-server.top/sponsor" 
+      icon="fa-regular fa-face-kiss-wink-heart" 
+      label="Sponsor"
+    />
   </div>
 
   <FloatButton flipHandler={flipHandler} label="About me" icon="fa-solid fa-arrow-right" />
@@ -62,7 +67,7 @@ let { flipHandler } = $props();
   box-sizing: border-box;
 }
 .list{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .title{
   font-size: 20px;
