@@ -1,16 +1,15 @@
 <main class="body">
-  <div class="license">
-    <i class="fa-brands fa-github" 
-      onclick={toRepo}
-      role="button" 
-      tabindex="0" 
-      onkeydown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toRepo();
-        }
-      }}
-    ></i>
+  <div class="license" 
+    onclick={toRepo}
+    role="button" 
+        tabindex="0" 
+        onkeydown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toRepo();
+          }
+    }}>
+    <i class="fa-brands fa-github"></i>
     <div>Under MIT License</div>
   </div>
   <div>Copyright © 2026-present ZhouC</div>
@@ -23,13 +22,11 @@ function toRepo(){
 </script>
 
 <style>
-.fa-github{
-  cursor: pointer;
-}
 .license{
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 @keyframes fadeIn { 
   from {

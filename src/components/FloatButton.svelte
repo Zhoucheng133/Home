@@ -12,7 +12,6 @@
     }}
     >
     <div class="label" >{ label }</div>
-    <!-- <i class="fa-solid fa-arrow-right"></i> -->
     <i class={icon}></i>
   </div>
 </main>
