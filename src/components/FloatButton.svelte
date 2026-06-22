@@ -25,6 +25,7 @@ let { flipHandler, label, icon } = $props();
   right: 20px;
   position: absolute;
   bottom: 25px;
+  cursor: pointer;
 }
 .float_button{
   display: flex;
@@ -50,7 +51,6 @@ let { flipHandler, label, icon } = $props();
 .label{
   text-decoration: none;
   position: relative;
-  cursor: pointer;
   color: black;
 }
 </style>
