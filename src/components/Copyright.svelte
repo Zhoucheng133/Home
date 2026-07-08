@@ -12,10 +12,12 @@
     <i class="fa-brands fa-github"></i>
     <div>Under MIT License</div>
   </div>
-  <div>Copyright © 2026-present ZhouC</div>
+  <div>Copyright © {getYear} ZhouC</div>
 </main>
 
 <script>
+const currentYear = new Date().getFullYear();
+$: getYear = currentYear > 2026 ? `2026 - ${currentYear}` : "2026";
 function toRepo(){
   window.open("https://github.com/Zhoucheng133/Home");
 }
