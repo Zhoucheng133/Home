@@ -18,12 +18,12 @@
       label="osu!"
     />
     <LinkButton 
-      link="https://blog.z-server.top" 
+      link="https://blog.zhouc1230.top" 
       icon="fa-solid fa-blog" 
       label="Blog"
     />
     <LinkButton 
-      link="https://blog.z-server.top/myprj" 
+      link="https://blog.zhouc1230.top/myprj" 
       icon="fa-solid fa-code" 
       label="Developed Projects"
     />
@@ -38,7 +38,7 @@
       label="Microsoft Store"
     />
     <LinkButton 
-      link="https://blog.z-server.top/sponsor" 
+      link="https://blog.zhouc1230.top/sponsor" 
       icon="fa-regular fa-face-kiss-wink-heart" 
       label="Sponsor"
     />
