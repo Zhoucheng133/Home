@@ -25,7 +25,7 @@
     <LinkButton 
       link="https://projects.zhouc1230.top" 
       icon="fa-solid fa-code" 
-      label="Developed Projects"
+      label="Projects"
     />
     <LinkButton 
       link="https://hub.docker.com/repositories/zhouc1230" 
