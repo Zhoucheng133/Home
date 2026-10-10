@@ -23,7 +23,7 @@
       label="Blog"
     />
     <LinkButton 
-      link="https://blog.zhouc1230.top/myprj" 
+      link="https://projects.zhouc1230.top" 
       icon="fa-solid fa-code" 
       label="Developed Projects"
     />
