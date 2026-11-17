@@ -12,20 +12,22 @@
       <span class="current">{{ currentLabel }}</span>
       <i class="fa-solid fa-chevron-down caret" :class="{ open: isOpen }"></i>
     </button>
-    <ul v-if="isOpen" class="language_menu" role="listbox">
-      <li
-        v-for="option in options"
-        :key="option.value"
-        role="option"
-        :aria-selected="option.value === localePreference"
-        class="language_option"
-        :class="{ selected: option.value === localePreference }"
-        @click="select(option.value)"
-      >
-        <span>{{ option.label }}</span>
-        <i v-if="option.value === localePreference" class="fa-solid fa-check"></i>
-      </li>
-    </ul>
+    <Transition name="menu">
+      <ul v-if="isOpen" class="language_menu" role="listbox">
+        <li
+          v-for="option in options"
+          :key="option.value"
+          role="option"
+          :aria-selected="option.value === localePreference"
+          class="language_option"
+          :class="{ selected: option.value === localePreference }"
+          @click="select(option.value)"
+        >
+          <span>{{ option.label }}</span>
+          <i v-if="option.value === localePreference" class="fa-solid fa-check"></i>
+        </li>
+      </ul>
+    </Transition>
   </div>
 </template>
 
@@ -158,5 +160,22 @@ onUnmounted(() => {
 
 .language_option.selected {
   color: rgb(255, 135, 9);
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.menu-enter-to,
+.menu-leave-from {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
