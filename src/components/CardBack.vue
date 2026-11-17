@@ -1,25 +1,28 @@
 <template>
   <div class="back">
-    <div class="title">😉 About me</div>
+    <div class="title">{{ t('about.title') }}</div>
     <div class="content">
-      <p>Hi my friend!</p>
-      <p>I'm a software engineer</p>
-      <p>Specializing in client-side development</p>
-      <div>I love</div>
+      <p>{{ t('about.greeting') }}</p>
+      <p>{{ t('about.role') }}</p>
+      <p>{{ t('about.focus') }}</p>
+      <div>{{ t('about.love') }}</div>
       <ul class="hobbies">
-        <li>👨🏻‍💻 coding</li>
-        <li>🍿 anime</li>
-        <li>✈️ travel</li>
-        <li>🎮 rhythm games</li>
-        <li>📷 photograph</li>
+        <li>{{ t('about.hobbies.coding') }}</li>
+        <li>{{ t('about.hobbies.anime') }}</li>
+        <li>{{ t('about.hobbies.travel') }}</li>
+        <li>{{ t('about.hobbies.rhythmGames') }}</li>
+        <li>{{ t('about.hobbies.photograph') }}</li>
       </ul>
     </div>
-    <FloatButton @flipHandler="flipHandler" label="Quick Link" iconData="fa-solid fa-arrow-left" />
+    <FloatButton @flipHandler="flipHandler" :label="t('card.quickLink')" iconData="fa-solid fa-arrow-left" />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
 import FloatButton from './FloatButton.vue';
+
+const { t } = useI18n();
 const emit = defineEmits([ "flipHandler" ]);
 function flipHandler(){
   emit("flipHandler");

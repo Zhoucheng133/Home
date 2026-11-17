@@ -1,6 +1,6 @@
 <template>
   <div class="front">
-    <div class="title">👋 Hi, visitor!</div>
+    <div class="title">{{ t('card.greeting') }}</div>
 
     <div class="list">
       <LinkButton 
@@ -21,12 +21,12 @@
       <LinkButton 
         link="https://blog.zhouc1230.top" 
         iconData="fa-solid fa-blog" 
-        label="Blog"
+        :label="t('card.blog')"
       />
       <LinkButton 
         link="https://projects.zhouc1230.top" 
         iconData="fa-solid fa-code" 
-        label="Projects"
+        :label="t('card.projects')"
       />
       <LinkButton 
         link="https://hub.docker.com/repositories/zhouc1230" 
@@ -41,17 +41,19 @@
       <LinkButton 
         link="https://blog.zhouc1230.top/sponsor" 
         iconData="fa-regular fa-face-kiss-wink-heart" 
-        label="Sponsor"
+        :label="t('card.sponsor')"
       />
     </div>
-    <FloatButton @flipHandler="flipHandler" label="About me" iconData="fa-solid fa-arrow-right" />
+    <FloatButton @flipHandler="flipHandler" :label="t('card.aboutMe')" iconData="fa-solid fa-arrow-right" />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
 import LinkButton from './LinkButton.vue';
 import FloatButton from './FloatButton.vue';
 
+const { t } = useI18n();
 const emit = defineEmits([ "flipHandler" ]);
 function flipHandler(){
   emit("flipHandler");

@@ -1,7 +1,7 @@
 <template>
   <div class="item" @click=click>
     <i :class="iconData"></i>
-    <div :class="label">{{ label }}</div>
+    <div>{{ label }}</div>
   </div>
 </template>
 

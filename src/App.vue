@@ -15,17 +15,21 @@
   </div>
   <Card />
   <Copyright />
+  <LanguageSwitcher />
 </template>
 
 <script setup lang="ts">
 import gsap from 'gsap';
 import { MorphSVGPlugin } from 'gsap/all';
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 import Typed from "typed.js";
 import Card from './components/Card.vue';
 import Copyright from './components/Copyright.vue';
+import LanguageSwitcher from './components/LanguageSwitcher.vue';
 
 gsap.registerPlugin(MorphSVGPlugin);
+const { t, locale } = useI18n();
 const start = "M 0 100 V 50 Q 50 0 100 50 V 100 z";
 const end   = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
 
@@ -33,12 +37,16 @@ let path;
 let tl: GSAPTimeline;
 let typed: Typed;
 
-onMounted(()=>{
+function startTyping(){
   typed = new Typed("#welcome", {
-    strings: ["Welcome!"],
+    strings: [t('welcome')],
     typeSpeed: 60,
     loop: false
   });
+}
+
+onMounted(()=>{
+  startTyping();
   path = document.querySelector(".path");
   tl = gsap.timeline({ paused: true })
     .to(path, { morphSVG: start, ease: "power2.in" })
@@ -48,8 +56,12 @@ onMounted(()=>{
     tl.play();
   }, 600);
 })
+watch(locale, () => {
+  typed?.destroy();
+  startTyping();
+});
 onUnmounted(()=>{
-  typed.destroy();
+  typed?.destroy();
   tl.kill();
 })
 

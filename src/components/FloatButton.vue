@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div  class="float_button" @click=flipHandler>
-      <div :class="label" >{{ label }}</div>
+    <div class="float_button" @click=flipHandler>
+      <div>{{ label }}</div>
       <i :class="iconData"></i>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div class="body">
     <div class="license" @click=toRepo>
       <i class="fa-brands fa-github"></i>
-      <div>Under MIT License</div>
+      <div>{{ t('copyright.license') }}</div>
     </div>
     <div>Copyright {{ getYear }} ZhouC | 苏ICP备2026075704号</div>
   </div>
@@ -10,6 +10,9 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 function toRepo(){
   window.open("https://github.com/Zhoucheng133/Home");
