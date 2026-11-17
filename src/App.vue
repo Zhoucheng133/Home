@@ -1,4 +1,4 @@
-<main>
+<template>
   <div class="welcome_container">
     <div class="welcome" id="welcome"></div>
   </div>
@@ -15,33 +15,31 @@
   </div>
   <Card />
   <Copyright />
-</main>
+</template>
 
-
-<script lang="ts">
-import Card from "./components/Card.svelte";
-import Copyright from "./components/Copyright.svelte";
-import gsap from "gsap";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-import { onMount } from "svelte";
+<script setup lang="ts">
+import gsap from 'gsap';
+import { MorphSVGPlugin } from 'gsap/all';
+import { onMounted, onUnmounted } from 'vue';
 import Typed from "typed.js";
+import Card from './components/Card.vue';
+import Copyright from './components/Copyright.vue';
 
 gsap.registerPlugin(MorphSVGPlugin);
-
 const start = "M 0 100 V 50 Q 50 0 100 50 V 100 z";
 const end   = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
 
 let path;
 let tl: GSAPTimeline;
+let typed: Typed;
 
-onMount(() => {
-  new Typed("#welcome", {
+onMounted(()=>{
+  typed = new Typed("#welcome", {
     strings: ["Welcome!"],
     typeSpeed: 60,
     loop: false
-  })
+  });
   path = document.querySelector(".path");
-
   tl = gsap.timeline({ paused: true })
     .to(path, { morphSVG: start, ease: "power2.in" })
     .to(path, { morphSVG: end, ease: "power2.out" });
@@ -49,10 +47,15 @@ onMount(() => {
   setTimeout(() => {
     tl.play();
   }, 600);
-});
+})
+onUnmounted(()=>{
+  typed.destroy();
+  tl.kill();
+})
+
 </script>
 
-<style>
+<style scoped>
 .welcome_container{
   min-height: 100vh;
   width: 100%;

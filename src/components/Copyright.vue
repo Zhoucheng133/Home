@@ -1,29 +1,26 @@
-<main class="body">
-  <div class="license" 
-    onclick={toRepo}
-    role="button" 
-        tabindex="0" 
-        onkeydown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toRepo();
-          }
-    }}>
-    <i class="fa-brands fa-github"></i>
-    <div>Under MIT License</div>
+<template>
+  <div class="body">
+    <div class="license" @click=toRepo>
+      <i class="fa-brands fa-github"></i>
+      <div>Under MIT License</div>
+    </div>
+    <div>Copyright {{ getYear }} ZhouC | 苏ICP备2026075704号</div>
   </div>
-  <div>Copyright © {getYear} ZhouC</div>
-</main>
+</template>
 
-<script>
-const currentYear = new Date().getFullYear();
-$: getYear = currentYear > 2026 ? `2026 - ${currentYear}` : "2026";
+<script lang="ts" setup>
+import { computed } from 'vue';
+
 function toRepo(){
   window.open("https://github.com/Zhoucheng133/Home");
 }
+const getYear=computed(()=>{
+  const currentYear = new Date().getFullYear();
+  return currentYear > 2026 ? `2026 - ${currentYear}` : "2026";
+})
 </script>
 
-<style>
+<style scoped>
 .license{
   display: flex;
   align-items: center;

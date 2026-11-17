@@ -1,29 +1,18 @@
-<main>
-  <div 
-    class="item" onclick={click}
-    role="button" 
-      tabindex="0" 
-      onkeydown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          click();
-        }
-      }}
-  >
-    <i class={icon}></i>
-    <div class="label">{label}</div>
+<template>
+  <div class="item" @click=click>
+    <i :class="iconData"></i>
+    <div :class="label">{{ label }}</div>
   </div>
-</main>
+</template>
 
-<script>
-let { link, icon, label } = $props();
-
+<script setup lang="ts">
+const {link, iconData, label} = defineProps(["link", "iconData", "label"])
 function click(){
   window.open(link, '_blank');
 }
 </script>
 
-<style>
+<style scoped>
 .item{
   width: auto;
   display: flex;

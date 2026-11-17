@@ -1,24 +1,26 @@
-<main>
+<template>
   <div class="card_container">
-    <div class="card_inner" class:is-flipped={flipped}>
-      <CardFront flipHandler={flipCard} />
-      <CardBack flipHandler={flipCard} />
+    <div class="card_inner" :class="flipped ? ['is-flipped'] : []">
+      <CardFront @flipHandler="flipCard" />
+      <CardBack @flipHandler="flipCard" />
     </div>
   </div>
-</main>
+</template>
 
-<script lang="ts">
-import CardFront from "./CardFront.svelte";
-import CardBack from "./CardBack.svelte";
+<script lang="ts" setup>
+import CardFront from './CardFront.vue';
+import CardBack from './CardBack.vue';
+import { ref } from 'vue';
 
-let flipped = false;
+let flipped = ref(false);
 
 function flipCard() {
-  flipped = !flipped;
+  flipped.value = !flipped.value;
 }
+
 </script>
 
-<style>
+<style scoped>
 .is-flipped {
   transform: rotateY(180deg);
 }

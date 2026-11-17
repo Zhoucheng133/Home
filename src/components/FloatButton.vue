@@ -1,26 +1,23 @@
-<main class="container">
-  <div 
-    class="float_button"
-    onclick={ flipHandler } 
-    role="button" 
-    tabindex="0" 
-    onkeydown={(e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        flipHandler();
-      }
-    }}
-    >
-    <div class="label" >{ label }</div>
-    <i class={icon}></i>
+<template>
+  <div class="container">
+    <div  class="float_button" @click=flipHandler>
+      <div :class="label" >{{ label }}</div>
+      <i :class="iconData"></i>
+    </div>
   </div>
-</main>
+</template>
 
-<script>
-let { flipHandler, label, icon } = $props();
+<script lang="ts" setup>
+const {label, iconData} = defineProps(["label", "iconData"])
+
+const emit = defineEmits([ "flipHandler" ]);
+function flipHandler(){
+  emit("flipHandler");
+}
+
 </script>
 
-<style>
+<style scoped>
 .container{
   right: 20px;
   position: absolute;
