@@ -6,7 +6,8 @@ export default {
     quickLink: '快速链接',
     blog: '博客',
     projects: '项目',
-    sponsor: '赞助'
+    sponsor: '赞助',
+    bilibili: '哔哩哔哩'
   },
   about: {
     title: '😉 关于我',

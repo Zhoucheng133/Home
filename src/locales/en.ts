@@ -6,7 +6,8 @@ export default {
     quickLink: 'Quick Link',
     blog: 'Blog',
     projects: 'Projects',
-    sponsor: 'Sponsor'
+    sponsor: 'Sponsor',
+    bilibili: 'bilibili'
   },
   about: {
     title: '😉 About me',

@@ -11,7 +11,7 @@
       <LinkButton 
         link="https://space.bilibili.com/5129395" 
         iconData="fa-brands fa-bilibili" 
-        label="bilibili"
+        :label="t('card.bilibili')"
       />
       <LinkButton 
         link="https://osu.ppy.sh/users/11444852" 
