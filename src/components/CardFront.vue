@@ -67,11 +67,12 @@ function flipHandler(){
   height: 100%;
   backface-visibility: hidden;
 
-  background-color: white;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--surface-bg);
+  box-shadow: var(--surface-shadow);
   border-radius: 10px;
   padding: 25px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .list{
   margin-top: 20px;

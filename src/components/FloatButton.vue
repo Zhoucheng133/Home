@@ -40,7 +40,7 @@ function flipHandler(){
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: var(--underline-color);
   transform: scaleX(0); 
   transform-origin: center;
   transition: transform 0.2s ease-in-out; 
@@ -48,6 +48,6 @@ function flipHandler(){
 .label{
   text-decoration: none;
   position: relative;
-  color: black;
+  color: var(--surface-text);
 }
 </style>

@@ -109,16 +109,16 @@ onUnmounted(() => {
   gap: 8px;
   padding: 8px 12px;
   font: inherit;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--switcher-text);
+  background-color: var(--switcher-button-bg);
+  border: 1px solid var(--switcher-border);
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color ease-in-out .2s;
+  transition: background-color ease-in-out .2s, border-color 0.3s ease-in-out;
 }
 
 .language_button:hover {
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: var(--switcher-button-hover-bg);
 }
 
 .caret {
@@ -137,10 +137,11 @@ onUnmounted(() => {
   margin: 0;
   padding: 6px 0;
   list-style: none;
-  background-color: rgba(30, 30, 30, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--switcher-menu-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--switcher-menu-border);
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--switcher-menu-shadow);
 }
 
 .language_option {
@@ -149,17 +150,18 @@ onUnmounted(() => {
   justify-content: space-between;
   gap: 12px;
   padding: 8px 14px;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--switcher-text);
   white-space: nowrap;
   cursor: pointer;
+  transition: background-color .2s ease-in-out;
 }
 
 .language_option:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--switcher-option-hover-bg);
 }
 
 .language_option.selected {
-  color: rgb(255, 135, 9);
+  color: var(--accent-color);
 }
 
 .menu-enter-active,

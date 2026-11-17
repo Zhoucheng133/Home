@@ -6,8 +6,8 @@
     <svg class="transition" viewBox="0 0 100 100" preserveAspectRatio="xMidYMin slice">
       <defs>
         <linearGradient id="grad" x1="0" y1="0" x2="99" y2="99" gradientUnits="userSpaceOnUse">
-          <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
-            <stop offset="0.7" stop-color="rgb(247, 189, 248)" />
+          <stop class="wave_stop wave_start" offset="0.2" />
+          <stop class="wave_stop wave_end" offset="0.7" />
         </linearGradient>
       </defs>
       <path bind:this={path} class="path" stroke="url(#grad)" fill="url(#grad)" stroke-width="2px" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
@@ -103,5 +103,17 @@ onUnmounted(()=>{
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.wave_stop {
+  transition: stop-color 0.3s ease-in-out;
+}
+
+.wave_start {
+  stop-color: var(--wave-start);
+}
+
+.wave_end {
+  stop-color: var(--wave-end);
 }
 </style>

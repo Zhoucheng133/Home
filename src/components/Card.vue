@@ -50,7 +50,8 @@ function flipCard() {
   left: 50%;
   top: 50%;
   transform: translate(-50%, calc(-50% + 20px ));
-  color: black;
+  color: var(--surface-text);
+  transition: color 0.3s ease-in-out;
 
   opacity: 0;
   animation: animateIn 0.3s ease-in-out forwards;

@@ -3,14 +3,63 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+
+  /* 主题变量（浅色模式） */
+  --page-text: rgba(255, 255, 255, 0.87);
+  --page-bg: #242424;
+  --surface-bg: #ffffff;
+  --surface-text: #000000;
+  --surface-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  --underline-color: #000000;
+  --accent-color: rgb(199, 90, 0);
+
+  --wave-start: rgb(255, 135, 9);
+  --wave-end: rgb(247, 189, 248);
+
+  --switcher-text: rgba(0, 0, 0, 0.87);
+  --switcher-button-bg: rgba(255, 255, 255, 0.85);
+  --switcher-button-hover-bg: #ffffff;
+  --switcher-border: rgba(0, 0, 0, 0.12);
+  --switcher-menu-bg: rgba(255, 255, 255, 0.85);
+  --switcher-menu-border: rgba(0, 0, 0, 0.12);
+  --switcher-menu-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --switcher-option-hover-bg: rgba(0, 0, 0, 0.06);
+
+  color: var(--page-text);
+  background-color: var(--page-bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    /* 主题变量（深色模式） */
+    --page-text: rgba(255, 255, 255, 0.9);
+    --page-bg: #141416;
+    --surface-bg: #1f1f23;
+    --surface-text: rgba(255, 255, 255, 0.87);
+    --surface-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.45);
+    --underline-color: rgba(255, 255, 255, 0.8);
+    --accent-color: rgb(255, 170, 80);
+
+    --wave-start: rgb(92, 45, 12);
+    --wave-end: rgb(88, 40, 96);
+
+    --switcher-text: rgba(255, 255, 255, 0.87);
+    --switcher-button-bg: rgba(255, 255, 255, 0.12);
+    --switcher-option-hover-bg: rgba(255, 255, 255, 0.05);
+    --switcher-button-hover-bg: rgba(255, 255, 255, 0.22);
+    --switcher-border: rgba(255, 255, 255, 0.3);
+    --switcher-menu-bg: rgba(28, 28, 32, 0.3);
+    --switcher-menu-border: rgba(255, 255, 255, 0.25);
+    --switcher-menu-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
 }
 
 body {

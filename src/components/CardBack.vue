@@ -46,13 +46,14 @@ function flipHandler(){
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  color: black;
+  color: var(--surface-text);
   transform: rotateY(180deg);
   
-  background-color: white;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--surface-bg);
+  box-shadow: var(--surface-shadow);
   border-radius: 10px;
   padding: 25px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 </style>
