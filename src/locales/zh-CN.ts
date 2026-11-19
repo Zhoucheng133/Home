@@ -19,7 +19,7 @@ export default {
       coding: '👨🏻‍💻 写代码',
       anime: '🍿 动画',
       travel: '✈️ 旅行',
-      rhythmGames: '🎮 音乐游戏',
+      rhythmGames: '🎮 节奏游戏',
       photograph: '📷 摄影'
     }
   },
